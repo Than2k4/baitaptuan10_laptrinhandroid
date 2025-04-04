@@ -1,18 +1,19 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- Viền ngoài (màu đen) -->
+    <!-- Viền ngoài (màu đen, to hơn) -->
     <item>
         <shape android:shape="oval">
             <solid android:color="#000000"/> <!-- Màu đen -->
-            <size android:width="130dp" android:height="130dp"/> <!-- Kích thước viền -->
         </shape>
     </item>
 
-    <!-- Lớp màu trắng bên trong (nhỏ hơn một chút để tạo hiệu ứng viền) -->
-    <item android:width="120dp" android:height="120dp">
+    <!-- Lớp màu trắng bên trong (viền rộng hơn do giảm inset) -->
+    <item android:insetLeft="20dp" android:insetTop="20dp"
+        android:insetRight="20dp" android:insetBottom="20dp">
         <shape android:shape="oval">
             <solid android:color="#FFFFFF"/> <!-- Màu trắng -->
         </shape>
+
     </item>
 
 </layer-list>

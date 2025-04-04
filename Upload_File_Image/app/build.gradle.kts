@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace = "com.example.upload_file_image"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.upload_file_image"

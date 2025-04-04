@@ -17,15 +17,15 @@ import retrofit2.http.POST;
 import retrofit2.http.Part;
 
 public interface ServiceAPI {
-    // Khởi tạo Retrofit
-    Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
+    public static final String BASE_URL = "http://app.iotstar.vn:8081/appfoods/";
+    Gson gson = new GsonBuilder().setDateFormat("yyyy MM dd HH:mm:ss").create();
+
     ServiceAPI servieapi = new Retrofit.Builder()
-            .baseUrl(Const.BASE_URL)
+            .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
             .create(ServiceAPI.class);
 
-    // API Upload ảnh
     @Multipart
     @POST("upload.php")
     Call<List<ImageUpload>> upload(@Part(Const.MY_USERNAME) RequestBody username,
